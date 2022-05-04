@@ -13,6 +13,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - run: echo Starting github actions
     - uses: actions/checkout@v3
+    - run: echo using actions/checkout@v3
+    - run: echo running docker build...
     - name: Build the Docker image
       run: docker build -t clion/remote-cpp-env:0.5 --file Dockerfile . --tag clion-remote-cpp-env:$(date +%s)
+    - run: completed!
